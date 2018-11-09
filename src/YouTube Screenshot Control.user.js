@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Screenshot Control
 // @namespace    https://www.youtube.com/
-// @version      1.0
+// @version      1.0.1.0
 // @description  Easily take screenshots of YouTube videos.
 // @author       You
 // @match        *://www.youtube.com/*
@@ -55,6 +55,18 @@
         document.body.setAttribute("style", "");
     }
 
+    function exitFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+
 
 
     var downloadURI = function(uri, name) {
@@ -83,7 +95,7 @@
         var evtobj = window.event? event : e;
         if (evtobj.keyCode == 80 && evtobj.altKey) {
             pause(document.querySelector("video"));
-            document.exitFullscreen();
+            exitFullscreen();
             takeScreenshot(document.querySelector("video"));
         }
     }
@@ -138,36 +150,48 @@
 
     document.onkeydown = AltP;
 
+    var initCompleted = false;
+    init();
 
-    // Create the screenshot button.
-    var screenshotButton = document.createElement("button");
-    screenshotButton.setAttribute("class", "ytp-button");
-    screenshotButton.setAttribute("title", "Screenshot Video");
-    screenshotButton.setAttribute("aria-pressed", "false");
-    screenshotButton.setAttribute("style", "vertical-align: top;");
+    var oldLocation = window.location.href;
+    setInterval(function() {
+        console.log(window.location.href);
+        if (window.location.href != oldLocation && !initCompleted) {
+            // The page changed, make sure to add the control if it isn't there.
+            oldLocation = window.location.href;
+            init();
+        }
+    }, 1000);
 
-    // Add the button's image.
-    var buttonImage = document.createElement("img");
-    buttonImage.setAttribute("src", "https://image.flaticon.com/icons/png/512/54/54217.png");
-    buttonImage.setAttribute("width", "55%");
-    buttonImage.setAttribute("height", "55%");
-//    buttonImage.setAttribute("align", "middle middle");
-    buttonImage.setAttribute("style", "filter: brightness(0) invert(1); vertical-align: middle; display: block; margin-left: auto; margin-right: auto;");
-    screenshotButton.appendChild(buttonImage);
+    function init() {
+        // Create the screenshot button.
+        var screenshotButton = document.createElement("button");
+        screenshotButton.setAttribute("class", "ytp-button");
+        screenshotButton.setAttribute("title", "Screenshot Video");
+        screenshotButton.setAttribute("aria-pressed", "false");
+        screenshotButton.setAttribute("style", "vertical-align: top;");
 
-    // Add the screenshot button to the controls.
-    // ytp-right-controls
-    var rightControls = document.getElementsByClassName("ytp-right-controls")[0];
-    rightControls.insertBefore(screenshotButton, rightControls.childNodes[0] || null);
+        // Add the button's image.
+        var buttonImage = document.createElement("img");
+        buttonImage.setAttribute("src", "https://image.flaticon.com/icons/png/512/54/54217.png");
+        buttonImage.setAttribute("width", "55%");
+        buttonImage.setAttribute("height", "55%");
+        buttonImage.setAttribute("style", "filter: brightness(0) invert(1); vertical-align: middle; display: block; margin-left: auto; margin-right: auto;");
+        screenshotButton.appendChild(buttonImage);
 
-//    screenshotButton.onclick = () => {
-//        pause(document.querySelector("video"));
-//        takeScreenshot(document.querySelector("video"));
-//    };
-    buttonImage.onclick = () => {
-        pause(document.querySelector("video"));
-        document.exitFullscreen();
-        takeScreenshot(document.querySelector("video"));
-    };
+        // Add the screenshot button to the controls.
+        // ytp-right-controls
+        var rightControls = document.getElementsByClassName("ytp-right-controls")[0];
+        if (rightControls) {
+            rightControls.insertBefore(screenshotButton, rightControls.childNodes[0] || null);
+        }
 
+        buttonImage.onclick = () => {
+            pause(document.querySelector("video"));
+            exitFullscreen();
+            takeScreenshot(document.querySelector("video"));
+        };
+
+        initCompleted = true;
+    }
 })();
