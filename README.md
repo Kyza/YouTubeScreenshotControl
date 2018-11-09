@@ -22,6 +22,8 @@ YouTube Screenshot Control adds a new control to YouTube which allows you to tak
 
 It's easy! Just click the new camera icon in the bottom right of the video or press `Alt+P`.
 
+### Note: Alt+P is currently not working.
+
 ## Warning
 
 Firefox is currently not fully supported and may not work correctly.
