@@ -3,7 +3,7 @@
 // @namespace    https://www.youtube.com/
 // @version      1.0
 // @description  Easily take screenshots of YouTube videos.
-// @author       You
+// @author       Kyza
 // @match        *://www.youtube.com/*
 // @grant        none
 // @downloadURL  https://github.com/KyzaGitHub/YouTubeScreenshotControl/raw/master/src/YouTube%20Video%20Screenshot%20Control.user.js
