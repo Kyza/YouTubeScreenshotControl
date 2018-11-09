@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         YouTube Video Screenshot Control
+// @name         YouTube Screenshot Control
 // @namespace    https://www.youtube.com/
 // @version      1.0
 // @description  Easily take screenshots of YouTube videos.
