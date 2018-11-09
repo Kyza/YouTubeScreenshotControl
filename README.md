@@ -6,17 +6,19 @@ YouTube Screenshot Control adds a new control to YouTube which allows you to tak
 
 ## How to Install
 
-> 1.) Install the [Tampermonkey](https://tampermonkey.net/) extension for [Google Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)/[Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/).
+> 1.) Download `YouTubeScreenshotControl.zip` from this repository.
 
-> 2.) Left click the extension icon and click `Dashboard`.
+> 2.) Install the [Tampermonkey](https://tampermonkey.net/) extension for [Google Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)/[Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/).
 
-> 3.) Navigate to the `Utilities` tab.
+> 3.) Left click the extension icon and click `Dashboard`.
 
-> 4.) Under `Zip`, click `Import`.
+> 4.) Navigate to the `Utilities` tab.
 
-> 5.) Select `YouTubeScreenshotControl.zip`.
+> 5.) Under `Zip`, click `Import`.
 
-> 6.) Click `Import`.
+> 6.) Select `YouTubeScreenshotControl.zip`.
+
+> 7.) Click `Import`.
 
 ## How to Use
 
