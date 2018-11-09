@@ -6,8 +6,8 @@
 // @author       You
 // @match        *://www.youtube.com/*
 // @grant        none
-// @downloadURL  https://github.com/KyzaGitHub/YouTubeScreenshotControl/blob/master/src/YouTube%20Video%20Screenshot%20Control.user.js
-// @updateURL    https://github.com/KyzaGitHub/YouTubeScreenshotControl/blob/master/src/YouTube%20Video%20Screenshot%20Control.user.js
+// @downloadURL  https://github.com/KyzaGitHub/YouTubeScreenshotControl/raw/master/src/YouTube%20Video%20Screenshot%20Control.user.js
+// @updateURL    https://github.com/KyzaGitHub/YouTubeScreenshotControl/raw/master/src/YouTube%20Video%20Screenshot%20Control.user.js
 // ==/UserScript==
 
 (function() {
