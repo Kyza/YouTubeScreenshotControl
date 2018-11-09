@@ -20,7 +20,7 @@ YouTube Screenshot Control adds a new control to YouTube which allows you to tak
 
 ## How to Use
 
-It's easy! Just click the new camera icon in the bottom right of the video.
+It's easy! Just click the new camera icon in the bottom right of the video or press `Alt+P`.
 
 ## Warning
 
