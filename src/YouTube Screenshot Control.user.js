@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Screenshot Control
 // @namespace    https://www.youtube.com/
-// @version      1.1.0.0
+// @version      1.1.1.0
 // @description  Easily take screenshots of YouTube videos.
 // @author       Kyza
 // @match        *://www.youtube.com/*
@@ -204,11 +204,15 @@
     document.onkeydown = AltP;
 
     var initCompleted = false;
-    init();
+    if (document.getElementsByClassName("ytp-chrome-controls")[0]) {
+        init();
+    }
 
     var oldLocation = window.location.href;
     setInterval(function() {
-        if (window.location.href != oldLocation && !initCompleted) {
+        console.log(initCompleted);
+        if (document.getElementsByClassName("ytp-chrome-controls")[0] && !initCompleted) {
+            console.log(document.getElementsByClassName("ytp-chrome-controls")[0]);
             // The page changed, make sure to add the control if it isn't there.
             oldLocation = window.location.href;
             init();
