@@ -30,19 +30,6 @@ It's easy! Just click the new camera icon in the bottom right of the video or pr
 To copy or save the image, right click and select the option.
 To crop the image before you save it, click on the opposite corners of that you want to crop it to.
 
-Clicking on these points...
-+======================+
-|  .                   |
-|                      |
-|                  .   |
-|                      |
-+======================+
-
-Gives you:
-+===============+
-|               |
-+===============+
-
 ### Note: Alt+P is currently not working.
 
 ## Warning
